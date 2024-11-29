@@ -1,30 +1,28 @@
-//! This crate implements a nosql style database. the records are stored
-//! is toml formated files. the record types are defined in the pam.toml
-//! file. the entire database is backed by git.
+//! This crate implements a nosql style database. 
+//! 
+//! [items.person]
+//! name = "String"
 
-use serde::{Deserialize, Serialize};
+use serde::{Serialize,Deserialize};
 
-#[derive(Debug, Serialize, Deserialize)]
-pub enum PropertyType {
-    String,
-    Integer,
-    Float,
-    Boolean,
-    Datetime,
-    Array,
-    Table,
+
+#[derive(Serialize, Deserialize)]
+pub struct ItemPropery {
+    toml_type: String,
+    required: bool,
 }
 
-pub type Object = std::collections::BTreeMap<String, PropertyType>;
 
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Project {
-    objects: Vec<Object>,
+impl ItemPropery {
+    pub fn new(name: &str, toml_type: &str, required: bool) -> ItemPropery {
+
+    }
 }
+
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-        
+
 }
