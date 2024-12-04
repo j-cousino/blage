@@ -1,8 +1,9 @@
 [package]
-name = "items"
+name = "itemstash"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+anyhow = "1.0.93"
 serde = { version = "1.0.215", features = ["derive"] }
-toml = "0.8.19"
+toml = { version = "0.8.19", features = ["preserve_order"] }
