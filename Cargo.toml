@@ -1,7 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "itemstash",
+    "itemstash", 
+    "proserve",
 ]
 
 [patch.crates-io]
